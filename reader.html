@@ -151,11 +151,11 @@
       updateControls(0, pageImages.length);
       prevButton.disabled = true;
       nextButton.disabled = pageImages.length <= 1;
-      prevButton.addEventListener('click', () => pageFlip.flipPrev());
-      nextButton.addEventListener('click', () => pageFlip.flipNext());
+      prevButton.addEventListener('click', () => pageFlip.flipPrev('top'));
+      nextButton.addEventListener('click', () => pageFlip.flipNext('top'));
       document.addEventListener('keydown', event => {
-        if (event.key === 'ArrowLeft') pageFlip.flipPrev();
-        if (event.key === 'ArrowRight') pageFlip.flipNext();
+        if (event.key === 'ArrowLeft') pageFlip.flipPrev('top');
+        if (event.key === 'ArrowRight') pageFlip.flipNext('top');
       });
       window.addEventListener('pagehide', () => pageImages.forEach(URL.revokeObjectURL), { once: true });
     }
